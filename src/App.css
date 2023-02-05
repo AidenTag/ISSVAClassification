@@ -1,38 +1,204 @@
-.App {
-  text-align: center;
+body {
+   font-size: 17px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid {
+   display: grid;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.grid > ul {
+   margin-top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.gene {
+   font-size: 0.8rem;
+   border-radius: 0.2rem;
+   background-color: rgb(52, 143, 228);
+   padding: 0.1rem 0.2rem;
+   color: rgb(255, 255, 255);
+   box-shadow: rgb(214, 214, 214) 2px 2px 4px;
+   font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+.icon-button {
+   height: min-content;
+   padding: 4px 5px;
+   line-height: 0;
+   margin-left: 4px;
+   font-size: large;
+}
+.icon-button > span {
+   line-height: inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.three-col-grid {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   font-size: smaller;
+   white-space: pre-line;
+   background-color: #f0f2f5;
+   grid-row-gap: 1px;
+   margin: 1.5rem 0;
+}
+
+.three-col-grid > div {
+   background-color: white;
+   padding: 5px 5px;
+}
+
+.controls {
+   display: grid;
+   grid-gap: 3px;
+   margin-bottom: 2rem;
+   grid-template-areas: "search search search search search open close";
+}
+
+.fixed-btn-group {
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   padding: 3rem 5rem;
+   display: grid;
+   grid-gap: 1rem 0.5rem;
+}
+
+.site-layout-background {
+   padding: 3% 5%;
+}
+
+.ant-layout-sider {
+   width: 25% !important;
+   max-width: 25% !important;
+   min-width: 25% !important;
+   box-shadow: 1px 0 5px #bec3cc;
+}
+
+.ant-popover {
+   font-size: smaller;
+}
+
+.ant-layout-sider-trigger {
+   top: 0;
+   left: 0; /* 
+   background: none; 
+   color: black; */
+   width: inherit !important;
+   min-width: 2rem;
+   transition: none;
+   display: none;
+}
+
+.open {
+   white-space: normal !important;
+}
+
+.site-layout {
+   margin-left: 25%;
+   background: none;
+}
+
+.ant-layout {
+   background: none;
+}
+
+.ant-btn {
+   font-size: inherit;
+   height: auto;
+}
+
+.ant-btn > .anticon {
+   line-height: 0;
+}
+
+.page {
+   background-color: rgb(245, 245, 245);
+   padding: 1rem 2.5rem 2.5rem 2.5rem;
+   border-radius: 0.5rem;
+}
+
+.info {
+   font-weight: 700;
+   color: rgb(39, 107, 172);
+}
+.info:hover {
+   cursor: pointer;
+   color: rgb(12, 45, 116);
+}
+
+.pop {
+   border-style: solid;
+   border-color: #7e7e7e;
+   border-width: 1px;
+   padding-right: 1rem;
+   border-radius: 0.2rem;
+   background-color: rgb(247, 247, 247);
+   max-width: 35rem;
+   font-size: smaller;
+}
+
+.highlight {
+   animation: 2s multicolor;
+}
+@keyframes multicolor {
+   0% {
+      background-color: none;
+   }
+   15% {
+      background-color: rgb(255, 242, 130);
+   }
+   85% {
+      background-color: rgb(255, 242, 130);
+   }
+   100% {
+      background-color: none;
+   }
+}
+
+@media (max-width: 991px) {
+   .site-layout {
+      margin-left: 2rem;
+   }
+   .ant-layout-sider {
+      width: 50% !important;
+      max-width: 50% !important;
+      min-width: 50% !important;
+   }
+   .ant-layout-sider-trigger {
+      display: block;
+   }
+   .treeview > div {
+      padding-left: 5px !important;
+   }
+}
+@media (max-width: 650px) {
+   .fixed-btn-group {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding: 5px 10px;
+      width: 100%;
+      background-color: white;
+   }
+   .fixed-btn-group > * {
+      border-radius: 2px;
+   }
+   .controls {
+      grid-template-areas:
+         "search search"
+         "open close";
+   }
+   body {
+      font-size: 12px;
+   }
+   .ant-popover {
+      max-width: 80% !important;
+   }
+}
+
+.ant-layout-sider-collapsed {
+   width: 0 !important;
+   max-width: 0 !important;
+   min-width: 0 !important;
+}
+
+.ant-notification {
+   font-size: inherit;
 }
